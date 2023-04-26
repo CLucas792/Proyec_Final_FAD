@@ -1,0 +1,72 @@
+﻿@page "/Factura"
+@using Modelos;
+
+<AuthorizeView Roles="Administrador">
+    <Authorized Context="AuthenticationState">
+        <EditForm Model="@establecimiento">
+            <DataAnnotationsValidator />
+            <div align="center">
+            <H4>DATOS DE LA EMPRESA</H4>
+            </div>
+            <div class="row">
+  
+                <div class="col">
+                    <label for="NombreEstablecimiento" class="col-sm-2 col-form-label">
+                        Establecimiento
+                    </label>
+                    <div class="col-sm-10">
+                        <InputText id="NombreEstablecimiento" class="form-control" @bind-Value="establecimiento.NombreEstablecimiento" readonly />
+                        <ValidationMessage For="@(() => establecimiento.NombreEstablecimiento)" />
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="Direccion" class="col-sm-2 col-form-label">
+                        Direccion
+                    </label>
+                    <div class="col-sm-10">
+                        <InputText id="Direccion" class="form-control" @bind-Value="establecimiento.Direccion" readonly />
+                        <ValidationMessage For="@(() => establecimiento.Direccion)" />
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="Correo" class="col-sm-2 col-form-label">
+                        Correo
+                    </label>
+                    <div class="col-sm-10">
+                        <InputText id="Correo" class="form-control" @bind-Value="establecimiento.Correo" readonly />
+                        <ValidationMessage For="@(() => establecimiento.Correo)" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="Telefono" class="col-sm-2 col-form-label">
+                        Telefono
+                    </label>
+                    <div class="col-sm-10">
+                        <InputText id="Telefono" class="form-control" @bind-Value="establecimiento.Telefono" readonly />
+                        <ValidationMessage For="@(() => establecimiento.Telefono)" />
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="RTN" class="col-sm-2 col-form-label">
+                        RTN
+                    </label>
+                    <div class="col-sm-10">
+                        <InputText id="RTN" class="form-control" @bind-Value="establecimiento.RTN" readonly />
+                        <ValidationMessage For="@(() => establecimiento.RTN)" />
+                    </div>
+                </div>
+            </div>
+        </EditForm>
+        <br /><br />
+        <div align="center"> <H4>DATOS DEL CLIENTE</H4> </div>
+        <br /><br /
+        <div align="center"><H4>DATOS DE FACTURA</H4> </div>
+
+    </Authorized>
+    <NotAuthorized>
+        <h3>No tiene permisos para acceder a esta ruta</h3>
+    </NotAuthorized>
+</AuthorizeView>

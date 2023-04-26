@@ -1,0 +1,136 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>Farmacia Del Ahorro</PageTitle>
+
+<div class="page">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <AuthorizeView>
+                        <Authorized>
+
+                                <h2 style="color:white">@context.User.Claims.First().Value</h2>
+                           
+                        </Authorized>
+
+                    </AuthorizeView>
+                </li>
+                <li class="nav-item active">
+                    <AuthorizeView>
+                        <Authorized>
+                            <span class="ml-md-auto">
+
+                                    <img src=/css/Img/miPerfil.jpg style="width:60px;height:65px; border-radius:160px; border:6px solid #12EB25;" />
+
+                            </span>
+                        </Authorized>
+                        <NotAuthorized>
+                            <div align="center"> <a href="Ingreso" width=auto; class="btn btn-primary btn-lg">Iniciar Sesión</a></div>
+
+                        </NotAuthorized>
+                    </AuthorizeView>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <AuthorizeView>
+                    <Authorized>
+
+                        <a href="/Salir" class="btn btn-outline-danger">Salir</a>
+
+                    </Authorized>
+
+                </AuthorizeView>
+            </form>
+        </div>
+    </nav>
+
+    <!--
+    faded
+    -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <AuthorizeView Roles="Administrador, Usuario">
+                        <Authorized>
+                            <div class="nav-item px-3">
+                                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                                    <span class="oi oi-home" aria-hidden="true"></span> Inicio
+                                </NavLink>
+                            </div>
+                        </Authorized>
+                    </AuthorizeView>
+                </li>
+                <li class="nav-item">
+                    <AuthorizeView Roles="Administrador">
+                        <Authorized>
+                            <div class="nav-item px-3">
+                                <NavLink class="nav-link" href="Usuarios">
+                                    <span class="oi oi-person" aria-hidden="true"></span> Usuarios
+                                </NavLink>
+                            </div>
+                        </Authorized>
+                    </AuthorizeView>
+                </li>
+                <li class="nav-item">
+                    <AuthorizeView Roles="Administrador">
+                        <Authorized>
+                            <div class="nav-item px-3">
+                                <NavLink class="nav-link" href="Medicamentos">
+                                    <span class="oi oi-laptop" aria-hidden="true"></span> Medicamentos
+                                </NavLink>
+                            </div>
+                        </Authorized>
+                    </AuthorizeView>
+                </li>
+                <li class="nav-item">
+                    <AuthorizeView Roles="Administrador">
+                        <Authorized>
+                            <div class="nav-item px-3">
+                                <NavLink class="nav-link" href="Establecimiento">
+                                    <span class="oi oi-share" aria-hidden="true"></span> Establecimiento
+                                </NavLink>
+                            </div>
+                        </Authorized>
+                    </AuthorizeView>
+                </li>
+                <li class="nav-item">
+                    <AuthorizeView Roles="Administrador">
+                        <Authorized>
+                            <div class="nav-item px-3">
+                                <NavLink class="nav-link" href="Factura">
+                                    <span class="oi oi-laptop" aria-hidden="true"></span> Factura
+                                </NavLink>
+                            </div>
+                        </Authorized>
+                    </AuthorizeView>
+                </li>
+                <!--
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                -->
+            </ul>
+        </div>
+    </nav>
+        <article class="content px-4">
+            @Body
+        </article>
+ 
+</div>
