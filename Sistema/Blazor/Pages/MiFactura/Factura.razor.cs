@@ -12,6 +12,7 @@ namespace Blazor.Pages.MiFactura
         [Inject] private SweetAlertService Swal { get; set; }
 
         private Establecimiento establecimiento = new Establecimiento();
+        private Cliente cliente = new Cliente();
 
         protected override async Task OnInitializedAsync()
         {

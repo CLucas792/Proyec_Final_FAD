@@ -1,0 +1,39 @@
+﻿@page "/ReciboExamenes"
+
+@using Modelos;
+
+<AuthorizeView Roles="Administrador">
+    <Authorized Context="AuthenticationState">
+        <h2>Lista de Examenes por recibir</h2>
+
+        @if (lista != null)
+        {
+            <p>No existen examenes pendientes en el sistema</p>
+        }
+        else
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr class="table-dark">
+                        <th>IdExamen</th>
+                        <th>IdentidadCliente</th>
+                        <th>NumMuestra</th>
+                        <th>TipoExamen</th>
+                        <th>FechaTomaMuestra</th>
+                        <th>Estado</th>
+                        <th>Pagado</th>
+                        <th>FechaDevolucion</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+
+            </table>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <h3>No tiene permisos para acceder a esta ruta</h3>
+    </NotAuthorized>
+</AuthorizeView>

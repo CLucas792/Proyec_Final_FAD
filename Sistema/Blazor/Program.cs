@@ -16,6 +16,7 @@ builder.Services.AddScoped<ILoginServicio, LoginServicio>();
 builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>();
 builder.Services.AddScoped<IEstablecimientoServicio, EstablecimientoServicio>();
 builder.Services.AddScoped<IMedicamentoServicio, MedicamentoServicio>();
+builder.Services.AddScoped<IClienteServicio, ClienteServicio>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 builder.Services.AddHttpContextAccessor();
