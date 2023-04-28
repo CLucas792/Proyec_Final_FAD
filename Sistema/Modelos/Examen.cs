@@ -17,5 +17,12 @@ namespace Modelos
         public bool Pagado { get; set; }
         public DateTime FechaDevolucion { get; set; }
         public bool RecogidoPorCliente { get; set; }
+
+        public Examen()
+        {
+        }
+
+
     }
+
 }
