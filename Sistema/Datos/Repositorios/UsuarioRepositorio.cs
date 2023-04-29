@@ -100,5 +100,21 @@ namespace Datos.Repositorios
             }
             return resultado;
         }
+
+        public async Task<Usuario> GetPorNombreAsync(string Nombre)
+        {
+            Usuario user = new Usuario();
+            try
+            {
+                using MySqlConnection _conexion = Conexion();
+                await _conexion.OpenAsync();
+                string sql = @"SELECT * FROM empleados WHERE Nombre = @Nombre;";
+                user = await _conexion.QueryFirstAsync<Usuario>(sql, new { Nombre });
+            }
+            catch (Exception)
+            {
+            }
+            return user;
+        }
     }
 }

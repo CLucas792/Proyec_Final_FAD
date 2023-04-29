@@ -5,7 +5,7 @@
     <Authorized Context="AuthenticationState">
         <h2>Lista de Examenes por enviar</h2>
 
-        @if (lista != null)
+        @if (lista == null)
         {
             <p>No existen examenes pendientes en el sistema</p>
         }
@@ -25,7 +25,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                   
+                    @foreach (Examen examen in lista)
+                    {
+                        <tr>
+                            <td>@examen.IdExamen</td>
+                            <td>@examen.IdentidadCliente</td>
+                            <td>@examen.NumMuestra</td>
+                            <td>@examen.TipoExamen</td>
+                            <td>@examen.FechaTomaMuestra</td>
+                            <td>@examen.Estado</td>
+                            <td>@examen.Pagado</td>
+
+                            <th>
+                                <a class="btn btn-outline-primary" href="@($"/EnvioMuestras2/{examen.IdExamen}")">Editar</a>
+                            </th>
+                        </tr>
+                    }
                 </tbody>
 
             </table>

@@ -17,13 +17,25 @@ namespace Modelos
         public bool Pagado { get; set; }
         public DateTime FechaDevolucion { get; set; }
         public bool RecogidoPorCliente { get; set; }
+        public double Precio { get; set; }
 
         public Examen()
         {
         }
 
-
+        public Examen(int idExamen, string identidadCliente, string numMuestra, string tipoExamen, DateTime fechaTomaMuestra, string estado, DateTime fechaEnvio, bool pagado, DateTime fechaDevolucion, bool recogidoPorCliente, double precio)
+        {
+            IdExamen = idExamen;
+            IdentidadCliente = identidadCliente;
+            NumMuestra = numMuestra;
+            TipoExamen = tipoExamen;
+            FechaTomaMuestra = fechaTomaMuestra;
+            Estado = estado;
+            FechaEnvio = fechaEnvio;
+            Pagado = pagado;
+            FechaDevolucion = fechaDevolucion;
+            RecogidoPorCliente = recogidoPorCliente;
+            Precio = precio;
+        }
     }
-
-
 }

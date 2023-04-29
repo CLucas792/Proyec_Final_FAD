@@ -35,29 +35,19 @@
                 </label
 
                         <InputSelect class="form-control" @bind-Value="examen.TipoExamen">
-                        @foreach (var TipoExamen in Enum.GetValues(typeof(Roles)))
+                        @foreach (var TipoExamen in listado)
                         {
-                                    <option value="@TipoExamen">@TipoExamen</option>
+                                    <option value="@TipoExamen">@TipoExamen.TipoExamen  Precio:@TipoExamen.Precio</option>
                         }
                         </InputSelect>
-                        <form action="#">
-                 <label for="Exam">Examen</label>
-                  <select name="Examenes" id="Exam" multiple>
-                    <option value="hemograma">Hemograma</option>
-                    <option value="Orina">Orina</option>
-                    <option value="glucosa">Glucosa</option>
-                    <option value="pcr">PCR</option>
-                  
-                    </select>
-                      <input type="submit" value="Enviar" />
-                </form>
+
                 </div>
-               
+             
                 </div>
                  <br/><br/>
                 <div class="form-group row">
                     <p>
-                        <input type="submit" class="btn btn-primary" value="Guardar"  />
+                        <input type="submit" class="btn btn-primary" value="Guardar" @onclick="Guardar" />
                         <input type="submit" class="btn btn-danger" value="Cancelar" />
                     </p>
                 </div>

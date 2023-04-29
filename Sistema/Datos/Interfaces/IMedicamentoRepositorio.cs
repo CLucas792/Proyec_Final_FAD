@@ -9,5 +9,6 @@ namespace Datos.Interfaces
         Task<IEnumerable<Medicamento>> GetListaAsync();
         Task<Medicamento> GetPorCodigoAsync(string idMedicamento);
         Task<Medicamento> GetPorNombreAsync(string Nombre);
+
     }
 }

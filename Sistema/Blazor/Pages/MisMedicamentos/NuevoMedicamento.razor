@@ -38,7 +38,9 @@
                         Nombre
                     </label>
                     <div class="col-sm-10">
+                        
                         <InputText id="Nombre" type="text" class="form-control" @bind-Value="medicamento.Nombre" />
+                      
                         <ValidationMessage For="@(() =>medicamento.Nombre)" />
                     </div>
                 </div>

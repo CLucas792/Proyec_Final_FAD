@@ -32,7 +32,7 @@ namespace Blazor.Pages.MisMedicamentos
             {
                 return;
             }
-
+            medicamento.idMedicamento = medicamento.idMedicamento + "M";
             bool inserto = await medicamentoServicio.NuevoAsync(medicamento);
 
             if (inserto)

@@ -36,6 +36,11 @@ namespace Blazor.Servicios
             return await _usuarioRepositorio.GetPorCodigoAsync(codigoUsuario);
         }
 
+        public async Task<Usuario> GetPorNombreAsync(string Nombre)
+        {
+            return await _usuarioRepositorio.GetPorNombreAsync(Nombre);
+        }
+
         public async Task<bool> NuevoAsync(Usuario user)
         {
             return await _usuarioRepositorio.NuevoAsync(user);
