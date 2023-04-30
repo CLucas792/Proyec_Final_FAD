@@ -36,6 +36,11 @@ namespace Blazor.Servicios
             return await examenRepositorio.GetListaPorEstadoAsync(Estado);
         }
 
+        public async Task<IEnumerable<Examen>> GetListaPorEstadoYIdPersonaAsync(string Estado, string IdentidadCliente)
+        {
+            return await examenRepositorio.GetListaPorEstadoYIdPersonaAsync(Estado, IdentidadCliente);
+        }
+
         public async Task<IEnumerable<Examen>> GetListaTipoExamenAsync()
         {
             return await examenRepositorio.GetListaTipoExamenAsync();
@@ -49,6 +54,11 @@ namespace Blazor.Servicios
         public async Task<double> TraerPrecioAsync(string TipoExamen)
         {
             return await examenRepositorio.TraerPrecioAsync(TipoExamen);
+        }
+
+        public async Task<int> UltimoRegistro()
+        {
+            return await examenRepositorio.UltimoRegistro();
         }
     }
 }

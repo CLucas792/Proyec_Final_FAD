@@ -30,12 +30,14 @@ namespace Blazor.Pages.MiLaboratorio
 
             if (edito)
             {
-                await Swal.FireAsync("Felicidades", "Muestra guardada", SweetAlertIcon.Success);
+                int num = await examenServicio.UltimoRegistro();
+                await Swal.FireAsync("Felicidades", "Muestra guardada, presentarse a caja y pagar el examen Num:" + num + " el valor a cancelar es de:" + examen.Precio + " Lps", SweetAlertIcon.Success);
             }
             else
             {
                 await Swal.FireAsync("Error", "No se pudo guardar la muestra", SweetAlertIcon.Error);
             }
+
             navigationManager.NavigateTo("/");
         }
     }

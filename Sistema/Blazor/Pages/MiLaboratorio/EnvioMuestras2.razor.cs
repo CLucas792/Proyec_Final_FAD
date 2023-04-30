@@ -20,6 +20,8 @@ namespace Blazor.Pages.MiLaboratorio
             if (examen.Pagado)
             {
                 examen.Estado = "Enviada";
+                examen.FechaEnvio = DateTime.Now;
+                examen.FechaDevolucion = null;
 
                 SweetAlertResult result = await Swal.FireAsync(new SweetAlertOptions
                 {

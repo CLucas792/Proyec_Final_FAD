@@ -21,7 +21,7 @@ namespace Datos.Repositorios
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
-                string sql = @"UPDATE exameneslaboratorio SET Estado = @Estado WHERE IdExamen = @IdExamen;";
+                string sql = @"UPDATE exameneslaboratorio SET Estado = @Estado, FechaEnvio = @FechaEnvio, FechaDevolucion = @FechaDevolucion WHERE IdExamen = @IdExamen;";
                 resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, examen));
             }
             catch (Exception)
@@ -79,6 +79,22 @@ namespace Datos.Repositorios
             return lista;
         }
 
+        public async Task<IEnumerable<Examen>> GetListaPorEstadoYIdPersonaAsync(string Estado, string IdentidadCliente)
+        {
+            IEnumerable<Examen> lista = new List<Examen>();
+            try
+            {
+                using MySqlConnection _conexion = Conexion();
+                await _conexion.OpenAsync();
+                string sql = @"SELECT * FROM exameneslaboratorio WHERE Estado = @Estado AND IdentidadCliente = @IdentidadCliente; ";
+                lista = await _conexion.QueryAsync<Examen>(sql, new { Estado, IdentidadCliente });
+            }
+            catch (Exception)
+            {
+            }
+            return lista;
+        }
+
         public async Task<IEnumerable<Examen>> GetListaTipoExamenAsync()
         {
             IEnumerable<Examen> lista = new List<Examen>();
@@ -126,6 +142,22 @@ namespace Datos.Repositorios
             {
             }
             return precio;
+        }
+
+        public async Task<int> UltimoRegistro()
+        {
+            int idFactura = 0;
+            try
+            {
+                using MySqlConnection conexion = Conexion();
+                await conexion.OpenAsync();
+                string sql = @"SELECT LAST_INSERT_ID() FROM exameneslaboratorio";
+                idFactura = Convert.ToInt32(await conexion.ExecuteScalarAsync(sql));
+            }
+            catch (Exception ex)
+            {
+            }
+            return idFactura;
         }
 
         private MySqlConnection Conexion()

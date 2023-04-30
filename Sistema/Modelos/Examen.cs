@@ -15,7 +15,7 @@ namespace Modelos
         public string Estado { get; set; }
         public DateTime FechaEnvio { get; set; }
         public bool Pagado { get; set; }
-        public DateTime FechaDevolucion { get; set; }
+        public DateTime? FechaDevolucion { get; set; }
         public bool RecogidoPorCliente { get; set; }
         public double Precio { get; set; }
 

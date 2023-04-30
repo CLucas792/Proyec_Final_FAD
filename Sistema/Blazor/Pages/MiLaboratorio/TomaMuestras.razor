@@ -37,13 +37,14 @@
                         <InputSelect class="form-control" @bind-Value="examen.TipoExamen">
                         @foreach (var TipoExamen in listado)
                         {
-                                    <option value="@TipoExamen">@TipoExamen.TipoExamen  Precio:@TipoExamen.Precio</option>
+                                    <option value="@TipoExamen.TipoExamen">@TipoExamen.TipoExamen</option>
                         }
                         </InputSelect>
 
                 </div>
              
                 </div>
+
                  <br/><br/>
                 <div class="form-group row">
                     <p>

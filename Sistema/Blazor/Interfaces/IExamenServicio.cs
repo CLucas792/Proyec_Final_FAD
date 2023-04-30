@@ -11,5 +11,7 @@ namespace Blazor.Interfaces
         Task<bool> ActualizarAsync(Examen examen);
         Task<Examen> BuscarPorIdAsync(string IdExamen);
         Task<bool> CambiarEstadoDePagoAsync(int IdExamen);
+        Task<int> UltimoRegistro();
+        Task<IEnumerable<Examen>> GetListaPorEstadoYIdPersonaAsync(string Estado, string IdentidadCliente);
     }
 }

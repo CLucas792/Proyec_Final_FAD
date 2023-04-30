@@ -11,6 +11,19 @@
         }
         else
         {
+              <div class="col">
+                <label for="IdentidadCliente" class="col-sm-2 col-form-label">
+                    Buscar por Identidad de Cliente
+                </label>
+                <div class="col-sm-10">
+                    <InputText id="IdentidadCliente" class="form-control" @bind-Value="IdClien" />
+
+                    <input type="submit" class="btn btn-dark" value="Buscar" @onclick="@BuscarP" />
+                    <input type="submit" class="btn btn-dark" value="Mostrar todos los registros" @onclick="@Todos" />
+                </div>
+
+            </div>
+
             <table class="table table-striped">
                 <thead>
                     <tr class="table-dark">
