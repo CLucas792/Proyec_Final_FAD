@@ -1,6 +1,6 @@
-﻿@page "/Medicamentos/Nuevo"
+﻿@page "/Medicamentos/Editar/{idMedicamento}"
 
-<AuthorizeView Roles="Administrador, Usuario">
+<AuthorizeView Roles="Administrador">
     <Authorized Context="AuthenticationState">
         <h3>Nuevo Medicamento</h3>
         <br />
@@ -29,7 +29,7 @@
                             idMedicamento
                         </label>
                         <div class="col-sm-10">
-                        <InputText id="idMedicamento" type="text" class="form-control" @bind-Value="medicamento.idMedicamento" />
+                        <InputText id="idMedicamento" type="text" class="form-control" @bind-Value="medicamento.idMedicamento" readonly/>
                         <ValidationMessage For="@(() =>medicamento.idMedicamento)" />
                         </div>
                     </div>

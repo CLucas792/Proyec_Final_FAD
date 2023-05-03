@@ -1,9 +1,10 @@
-﻿@page "/EnvioMuestras"
+﻿@page "/EntregaExamenes"
+
 @using Modelos;
 
 <AuthorizeView Roles="Administrador, Usuario">
     <Authorized Context="AuthenticationState">
-        <h2>Lista de Examenes por enviar</h2>
+        <h2>Lista de Examenes por recibir</h2>
 
         @if (lista == null)
         {
@@ -11,7 +12,7 @@
         }
         else
         {
-              <div class="col">
+            <div class="col">
                 <label for="IdentidadCliente" class="col-sm-2 col-form-label">
                     Buscar por Identidad de Cliente
                 </label>
@@ -23,7 +24,9 @@
                 </div>
 
             </div>
+            <br />
 
+            <br />
             <table class="table table-striped">
                 <thead>
                     <tr class="table-dark">
@@ -50,7 +53,7 @@
                             <td>@examen.Pagado</td>
 
                             <th>
-                                <a class="btn btn-outline-primary" href="@($"/EnvioMuestras2/{examen.IdExamen}")">Editar</a>
+                                <a class="btn btn-outline-primary" href="@($"/EntregaExamenes2/{examen.IdExamen}")">Confirmar Entrega a paciente</a>
                             </th>
                         </tr>
                     }

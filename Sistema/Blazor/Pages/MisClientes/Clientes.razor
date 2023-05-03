@@ -1,7 +1,7 @@
 ﻿@page "/Clientes"
 @using Modelos;
 
-<AuthorizeView Roles="Administrador">
+<AuthorizeView Roles="Administrador, Usuario">
     <Authorized Context="AuthenticationState">
         <h2>Lista de Clientes</h2>
 

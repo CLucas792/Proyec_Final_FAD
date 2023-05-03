@@ -21,7 +21,7 @@ namespace Datos.Repositorios
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
-                string sql = @"UPDATE exameneslaboratorio SET Estado = @Estado, FechaEnvio = @FechaEnvio, FechaDevolucion = @FechaDevolucion WHERE IdExamen = @IdExamen;";
+                string sql = @"UPDATE exameneslaboratorio SET Estado = @Estado, FechaEnvio = @FechaEnvio, FechaDevolucion = @FechaDevolucion, RecogidoPorCliente = @RecogidoPorCliente WHERE IdExamen = @IdExamen;";
                 resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, examen));
             }
             catch (Exception)

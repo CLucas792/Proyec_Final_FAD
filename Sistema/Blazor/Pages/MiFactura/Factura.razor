@@ -1,7 +1,7 @@
 ﻿@page "/Factura"
 @using Modelos;
 
-<AuthorizeView Roles="Administrador">
+<AuthorizeView Roles="Administrador, Usuario">
     <Authorized Context="AuthenticationState">
         <EditForm Model="@establecimiento">
             <DataAnnotationsValidator />

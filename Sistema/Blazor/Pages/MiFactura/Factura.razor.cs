@@ -122,6 +122,8 @@ namespace Blazor.Pages.MiFactura
                 }
 
                 await Swal.FireAsync("Felicidades", "Factura guardada con exito", SweetAlertIcon.Success);
+
+                navigationManager.NavigateTo("Factura", true);
             }
             else
             {

@@ -1,14 +1,8 @@
-﻿using Blazor.Interfaces;
-using CurrieTechnologies.Razor.SweetAlert2;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using Modelos;
-
-namespace Blazor.Pages.MiFactura
+﻿namespace Blazor.Pages.MiFactura
 {
     public partial class NuevaFactura
     {
-        [Inject] private IEstablecimientoServicio establecimientoServicio { get; set; }
+        /* [Inject] private IEstablecimientoServicio establecimientoServicio { get; set; }
         [Inject] private IFacturaServicio facturaServicio { get; set; }
         [Inject] private IDetalleFacturaServicio detalleFacturaServicio { get; set; }
         [Inject] private IMedicamentoServicio medicamentoServicio { get; set; }
@@ -84,6 +78,7 @@ namespace Blazor.Pages.MiFactura
             {
                 await Swal.FireAsync("Error", "No se pudo guardar la factura", SweetAlertIcon.Error);
             }
-        }
+        }*/
+
     }
 }

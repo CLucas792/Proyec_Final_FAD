@@ -50,7 +50,7 @@ namespace Blazor.Pages.MisUsuarios
         }
         protected async void Cancelar()
         {
-            navigationManager.NavigateTo("/Medicamentos");
+            navigationManager.NavigateTo("/Usuarios");
         }
 
     }

@@ -30,7 +30,7 @@
             </li>
 
                 <li class="nav-item">
-                    <AuthorizeView Roles="Administrador">
+                <AuthorizeView Roles="Administrador, Usuario">
                         <Authorized>
                             <div class="nav-item px-3">
                                 <NavLink class="nav-link" href="Usuarios">
@@ -41,7 +41,7 @@
                     </AuthorizeView>
                 </li>
                 <li class="nav-item">
-                    <AuthorizeView Roles="Administrador">
+                <AuthorizeView Roles="Administrador, Usuario">
                         <Authorized>
                             <div class="nav-item px-3">
                                 <NavLink class="nav-link" href="Clientes">
@@ -52,7 +52,7 @@
                     </AuthorizeView>
                 </li>
                 <li class="nav-item">
-                    <AuthorizeView Roles="Administrador">
+                <AuthorizeView Roles="Administrador, Usuario">
                         <Authorized>
                             <div class="nav-item px-3">
                                 <NavLink class="nav-link" href="Medicamentos">
@@ -63,7 +63,7 @@
                     </AuthorizeView>
                 </li>
                 <li class="nav-item">
-                    <AuthorizeView Roles="Administrador">
+                <AuthorizeView Roles="Administrador, Usuario">
                         <Authorized>
                             <div class="nav-item px-3">
                                 <NavLink class="nav-link" href="Establecimiento">
@@ -75,7 +75,7 @@
                 </li>
 
                  <li class="nav-item">
-                      <AuthorizeView Roles="Administrador">
+                <AuthorizeView Roles="Administrador, Usuario">
                         <Authorized>
                             
                     <div class="dropdown">
@@ -84,7 +84,7 @@
                             <a href="TomaMuestras">Toma de muestras</a>
                             <a href="EnvioMuestras">Envio de muestras</a>
                             <a href="ReciboExamenes">Recibo de examenes</a>
-                            <a href="#">Entrega de examenes</a>
+                            <a href="EntregaExamenes">Entrega de examenes</a>
                         </div>
                     </div>
                        
@@ -93,7 +93,7 @@
                 </li>
 
             <li class="nav-item">
-                <AuthorizeView Roles="Administrador">
+                <AuthorizeView Roles="Administrador, Usuario">
                     <Authorized>
                         <div class="nav-item px-3">
                             <NavLink class="nav-link" href="Factura">
